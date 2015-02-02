@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="base.css"/>
+</head>
+<body>
+    <div ng-controller="MyController">
+        {{ message }}
+        <div>{{message2}}</div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', []).factory('Car', function () {
+            return {
+                name: 'Audi',
+                make: 'S5'
+            }
+        }).service('Car2', function () {
+            this.name = 'BMW';
+            this.make = '328i'
+        }).controller('MyController', function ($scope, Car, Car2) {
+            $scope.message = 'These are the specs for ' + Car.name + ' ' + Car.make;
+            $scope.message2 = 'These are the specs for ' + Car2.name + ' ' + Car2.make;
+        });
+    </script>
+</body>
+</html>
