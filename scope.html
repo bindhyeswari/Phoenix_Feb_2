@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RootScope</title>
+    <link rel="stylesheet" href="base.css"/>
+</head>
+<body>
+    <div ng-controller="MyController">
+        {{ message }}
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', [])
+                .run(function ($rootScope) {
+                    $rootScope.message = 'Hello World!';
+                })
+                .controller('MyController', function ($scope) {
+
+        });
+    </script>
+</body>
+</html>

@@ -12,9 +12,9 @@
     <script src="bower_components/angular/angular.js"></script>
     <script>
         var start = new Date();
-        angular.module('myApp', []).config(function () {
+        angular.module('myApp', []).config(function (DummyFactory) {
             console.log('The config phase timeline: ' + printDiff());
-        }).run(function () {
+        }).run(function (DummyFactory) {
             console.log('The run phase timeline: ' + printDiff());
         }).controller('MyController', function ($scope, DummyFactory) {
             console.log('The MyController runs at timeline: ' + printDiff());
